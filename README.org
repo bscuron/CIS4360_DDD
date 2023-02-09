@@ -11,3 +11,22 @@ The company is a global online video sharing platform responsible for providing 
 *** Description of Flow
 
 The start location in the diagram above can start two locations. The first location is the "independent creator". The independent creator is a content creator that uploads videos to the company's servers. This independent creator is not officially partnered with the company. This creator's videos are uploaded to the site and served publically. The content review team is responsible for reviewing the content/videos uploaded by the independent creator. If the review team deems that the video is innapropriate, they can remove the video from the company's servers and provide feedback to the independent creator. The second start location in the diagram above is from the partner recruiter. The recruiter is responsible for finding talented independent content creators and recruiting them to join a partnership with the company. Partnered creators have certain perks such as higher percentage of ad revenue, and promotional services. Partnered creators also upload videos to the company's servers and are subject to video removals if the content they upload does not pass the content review team. Public videos from the server are served to customers around the globe. Customers watching videos are served ads periodically that are used to sustain the company's business and provide financial resources to the platform's creators. Customers have the option of subscribing to a paid version of the platform that foregoes ads in place of a paid subscription model.
+
+** Step 3 - Sub Team Called "Content Boosting Team"
+
+Sub team mission is to build a system to algorithmically boost content deemed valuable to the company. Attributes deemed valuable are extracted via a neural network trained on the large amount of user stored data.
+
+Requirements:
+- System should be able to store a large amount of user data (needed to train the neural network)
+- System should be able to train the neural network on a large amount of data
+- System should be able to be tweaked by developers to hand pick certain valuable attributes
+- Neural network should be trained in a relatively short time period
+
+*** Architectural Design of Some Parts of the Overall System
+
+[[./images/architectural_design.png]]
+
+Diagram on paper:
+[[./images/architectural_design_paper.png]]
+
+The Neural Network microservice's sole responsibility is to assign weights to videos that creators upload. Data for the microservice is retrieved from the company's data centers. For highly efficient training, the microservice is running in parallel on a cloud compute cluster. After assigning desirability weights to videos, the microservice relays the information to a sorting microservice. The sorting microservice is responsible for sorting the outputs from the neural network microservice. Sorted outputs then flow to the server that is responsible for retrieving and serving the videos to the customer in sorted order. Developers can also alter results produced by the neural network by hand-selecting certain attributes that they deem valuable in a video (such as: the video is educational, the video is uplifting, etc.).
