@@ -1,0 +1,13 @@
+* Written Homework 1 - Domain Driven Design (DDD)
+
+** Step 1 - Business Problem or Opportunity Description
+
+The company is a global online video sharing platform responsible for providing entertainment to millions of user worldwide. Videos are uploaded to the platform by independent and partnered content creators looking to entertain their audience. The company provides the opportunity for large content creators to sign an exclusive deal with the platform to become a partner. Once a partner, the creator upload exclusively to the platform. Creators (partnered and not) upload videos to the company's web platform. The web platform stores the videos created by the content creators and serves them for customers to watch at their leisure. Revenue for the company is generated through advertisements and paid subscriptions to content creators. Partnered creators of the company are promoted and paid more than non-partnered creators.
+
+** Step 2 - Diagram Depicting a General Flow
+
+[[./images/general_flow.png]]
+
+*** Description of Flow
+
+The start location in the diagram above can start two locations. The first location is the "independent creator". The independent creator is a content creator that uploads videos to the company's servers. This independent creator is not officially partnered with the company. This creator's videos are uploaded to the site and served publically. The content review team is responsible for reviewing the content/videos uploaded by the independent creator. If the review team deems that the video is innapropriate, they can remove the video from the company's servers and provide feedback to the independent creator. The second start location in the diagram above is from the partner recruiter. The recruiter is responsible for finding talented independent content creators and recruiting them to join a partnership with the company. Partnered creators have certain perks such as higher percentage of ad revenue, and promotional services. Partnered creators also upload videos to the company's servers and are subject to video removals if the content they upload does not pass the content review team. Public videos from the server are served to customers around the globe. Customers watching videos are served ads periodically that are used to sustain the company's business and provide financial resources to the platform's creators. Customers have the option of subscribing to a paid version of the platform that foregoes ads in place of a paid subscription model.
